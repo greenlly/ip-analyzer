@@ -16,7 +16,7 @@ def categorize(info_list: list, special_key: str):
             else:
                 result[value] = 1
         return(result)
-    except Exeption as error:
+    except Exception as error:
         result["error"] = error
         return(result)
 
