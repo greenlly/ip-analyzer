@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
-# Include necessary modules '{requests, json}'
-import requests, json
+# Include necessary modules '{requests}'
+import requests
 
 # Get information from given IP 
 def get_information(ip: str, fields: list):
