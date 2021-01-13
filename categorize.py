@@ -23,12 +23,14 @@ def categorize(info_list: list, special_key: str):
 
 # Also can use this alone
 if __name__ == "__main__":
-    info_str = input("Enter your list carefully: ")
+    info_file_addr = input("Enter your information file list address (exp: './information-ips.json'): ")
     special_key = input("Enter what key of this list you want categorize (Exp: country): ")
     try:
-        info_list = json.loads(info_str)
-        result = categorize(info_list=info_list, special_key=special_key)
-        print(f"{result=}")
+        with open(file=info_file_addr, mode='r') as f:
+            info_list = json.load(fp=f)
+            f.close()
+            result = categorize(info_list=info_list, special_key=special_key)
+            print(f"{result=}")
     except Exception as error:
         result = {"error": error}
         print(f"{result=}")
